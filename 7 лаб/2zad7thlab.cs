@@ -1,8 +1,4 @@
-﻿//1.Студенты одной группы в сессию сдают четыре экзамена. Составить список
-//студентов, средний балл которых по всем экзаменам не менее «4». Результаты
-//вывести в виде таблицы с заголовком в порядке убывания среднего балла.
-
-class Program
+﻿class Program
 {
     class chelovek// структура
     {
@@ -38,11 +34,14 @@ class Program
     }
     class student : chelovek
     {
+        protected static int _studentnumberall;
         protected int _studentnumber;
 
-        public student(string name, double[] ekz, int studentnumber) : base(name, ekz)
+        public student(string name, double[] ekz) : base(name, ekz)
         {
-            _studentnumber = studentnumber;
+            _studentnumberall++;
+            _studentnumber = _studentnumberall;
+
         }
         public override void Print()
         {
@@ -63,11 +62,11 @@ class Program
         results[4] = new chelovek("Smislov", new double[] { 4, 4, 4, 4 });
         sort(results);
         student[] end = new student[5];
-        end[0] = new student("Sidorov", new double[] { 3, 4, 5, 2 }, 1);
-        end[1] = new student("Petrov", new double[] { 2, 3, 4, 4 }, 2);
-        end[2] = new student("Ivanov", new double[] { 5, 5, 4, 5 }, 3);
-        end[3] = new student("Kostin", new double[] { 4, 4, 3, 5 }, 4);
-        end[4] = new student("Smislov", new double[] { 4, 4, 4, 4 }, 5);
+        end[0] = new student("Sidorov", new double[] { 3, 4, 5, 2 });
+        end[1] = new student("Petrov", new double[] { 2, 3, 4, 4 });
+        end[2] = new student("Ivanov", new double[] { 5, 5, 4, 5 });
+        end[3] = new student("Kostin", new double[] { 4, 4, 3, 5 });
+        end[4] = new student("Smislov", new double[] { 4, 4, 4, 4 });
 
 
         Console.WriteLine("{0,20},{1,20},{2,20}", "Фамилия", "Средний бал", "Номер студентческого билета");
