@@ -5,7 +5,7 @@
         protected string _name;
         protected double[] _1ekz = new double[4];
         protected double _AVG;
-        public double AVG { get { return _AVG; } }// свойство
+
         public chelovek(string name, double[] ekz)
         {
             _name = name;
@@ -30,6 +30,25 @@
                 Console.WriteLine("{0,20},{1,20}", _name, _AVG);
             }
         }
+        public void sort(chelovek[] results)
+        {
+            for (int i = 0; i < results.Length - 1; i++)
+            {
+
+                for (int j = i; j < results.Length; j++)
+                {
+                    if (results[i]._AVG < results[j]._AVG)
+                    {
+                        chelovek all = results[j];
+                        results[j] = results[i];
+                        results[i] = all;
+                    }
+                }
+            }
+
+        }
+
+
 
     }
     class student : chelovek
@@ -60,7 +79,10 @@
         results[2] = new chelovek("Ivanov", new double[] { 5, 5, 4, 5 });
         results[3] = new chelovek("Kostin", new double[] { 4, 4, 3, 5 });
         results[4] = new chelovek("Smislov", new double[] { 4, 4, 4, 4 });
-        sort(results);
+        for (int i = 0; i < 5; i++)
+        {
+            results[i].sort(results);
+        }
         student[] end = new student[5];
         end[0] = new student("Sidorov", new double[] { 3, 4, 5, 2 });
         end[1] = new student("Petrov", new double[] { 2, 3, 4, 4 });
@@ -74,21 +96,5 @@
 
         { end[i].Print(); }
     }
-    static void sort(chelovek[] results)
-    {
-        for (int i = 0; i < results.Length - 1; i++)
-        {
 
-            for (int j = i; j < results.Length; j++)
-            {
-                if (results[i].AVG < results[j].AVG)
-                {
-                    chelovek all = results[j];
-                    results[j] = results[i];
-                    results[i] = all;
-                }
-            }
-        }
-
-    }
 }
