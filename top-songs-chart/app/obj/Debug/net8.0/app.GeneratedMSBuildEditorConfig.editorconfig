@@ -8,6 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = app
-build_property.ProjectDir = /Users/laviprog/Projects/top-songs-chart/app/
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\ragoz\source\repos\BBI-23-4\Lab8\top-songs-chart\app\
